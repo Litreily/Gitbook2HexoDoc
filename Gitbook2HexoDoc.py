@@ -57,7 +57,7 @@ class Gitbook2Hexo(object):
             f.write('---\n')
 
             # replace resources path
-            pattern = re.compile(r'\(\.\.\/{0}\/'.format(self.res_dir))
+            pattern = re.compile(r'\((\.\.\/)+{0}\/'.format(self.res_dir))
             old_data = re.subn(pattern, r'(/{0}/'.format(self.res_dir), old_data)[0]
             f.write(old_data)
 
