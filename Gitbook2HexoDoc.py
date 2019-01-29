@@ -57,8 +57,8 @@ class Gitbook2Hexo(object):
             f.write('---\n')
 
             # replace resources path
-            pattern = re.compile(r'\((\.\.\/)+{0}\/'.format(self.res_dir))
-            old_data = re.subn(pattern, r'(/{0}/'.format(self.res_dir), old_data)[0]
+            pattern = re.compile(r'(\.\.\/)+{0}\/'.format(self.res_dir))
+            old_data = re.subn(pattern, r'/{0}/'.format(self.res_dir), old_data)[0]
             f.write(old_data)
 
     def _get_file_createtime(self, file):
